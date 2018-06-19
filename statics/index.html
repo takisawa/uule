@@ -1,14 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Google Local Search UULE Code</title>
+    <title>Google Local Search</title>
   </head>
 
   <body>
     <h1>Google Local Search UULE Code</h1>
 
     <form action="/uule" method="POST">
-      <input type="text" name="location" />
+      <label>
+        Search word:
+        <input type="text" name="word" />
+      </label>
+      <label>
+        Location:
+        <select name="location" />
+        </select>
+      </label>
       <input type="submit" />
     </form>
   </body>
