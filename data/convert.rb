@@ -1,11 +1,14 @@
 #!/usr/bin/env ruby
 
+require 'csv'
+
 source_file = ARGV[0]
 
-File.open(source_file, 'r') do |f|
-  f.gets # header
+CSV.open(source_file, 'r') do |csv|
+  csv.gets # header
 
-  while line = f.gets
-    criteria_id, name, canonical_name, = line.split(',')
+  csv.each do |row|
+    criteria_id, name, canonical_name, = row
+    STDOUT.puts %|<option value="#{criteria_id}">#{canonical_name}</option>|
   end
 end
